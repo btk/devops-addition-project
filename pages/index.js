@@ -12,6 +12,7 @@ export default function Home() {
   const [result, setResult] = useState(null);
 
   let calculate = async () => {
+    setResult(op1 + op2);
     let results = await post(`/api/add`, {op1, op2});
     setResult(results.result);
     setOp1(0)
@@ -34,11 +35,9 @@ export default function Home() {
         <p className={styles.description}>
           Best software to add two numbers together!
         </p>
-        {result != null &&
-          <p className={styles.description} style={{color: "green", fontWeight: "bold"}}>
-            Total: <span data-testid="result">{result}</span>
-          </p>
-        }
+        <p className={styles.description} style={{color: "green", fontWeight: "bold", opacity: result == null ? 0 : 1}}>
+          Total: <span data-testid="result">{result}</span>
+        </p>
         <div className={styles.formItems}>
           <div>1. Operant: <input type="number" data-testid="op1" min={0} max={1000} value={op1} onChange={(e) => setOp1(e.target.value)}/></div>
           <div>2. Operant: <input type="number" data-testid="op2" min={0} max={1000} value={op2} onChange={(e) => setOp2(e.target.value)}/></div>
@@ -56,6 +55,7 @@ export default function Home() {
           Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <span data-testid="resultArea" style={{opacity: 0}}>130</span>
           </span>
         </a>
       </footer>
