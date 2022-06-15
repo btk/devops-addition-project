@@ -12,7 +12,6 @@ export default function Home() {
   const [result, setResult] = useState(null);
 
   let calculate = async () => {
-    setResult(op1 + op2);
     let results = await post(`/api/add`, {op1, op2});
     setResult(results.result);
     setOp1(0)
