@@ -36,14 +36,14 @@ export default function Home() {
         </p>
         {result != null &&
           <p className={styles.description} style={{color: "green", fontWeight: "bold"}}>
-            Total: {result}
+            Total: <span data-testid="result">{result}</span>
           </p>
         }
         <div className={styles.formItems}>
-          <div>1. Operant: <input type="number" min={0} max={1000} value={op1} onChange={(e) => setOp1(e.target.value)}/></div>
-          <div>2. Operant: <input type="number" min={0} max={1000} value={op2} onChange={(e) => setOp2(e.target.value)}/></div>
+          <div>1. Operant: <input type="number" data-testid="op1" min={0} max={1000} value={op1} onChange={(e) => setOp1(e.target.value)}/></div>
+          <div>2. Operant: <input type="number" data-testid="op2" min={0} max={1000} value={op2} onChange={(e) => setOp2(e.target.value)}/></div>
 
-          <div><button onClick={() => calculate()}>Calculate</button></div>
+          <div><button onClick={() => calculate()} data-testid="calculate">Calculate</button></div>
         </div>
       </main>
 
