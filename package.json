@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "yarn test:ci && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
