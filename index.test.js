@@ -20,6 +20,6 @@ describe("Addition app", () => {
     fireEvent.change(op1input, { target: { value: 50 } });
     fireEvent.change(op2input, { target: { value: 80 } });
     addButton.click();
-    expect(resultArea).toHaveTextContent("150");
+    expect(resultArea).toHaveTextContent("130");
   });
 });
