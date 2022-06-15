@@ -2,11 +2,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "yarn test:ci && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
-    "test:ci": "npx jest --ci"
+    "test:ci": "jest --ci"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -16,6 +16,7 @@
     "react-dom": "18.0.0"
   },
   "devDependencies": {
+    "jest": "^28.1.1",
     "eslint": "8.12.0",
     "eslint-config-next": "12.1.4",
     "jest-environment-jsdom": "^28.1.1"
