@@ -4,7 +4,7 @@ export default async (req, res) => {
   op1 = Number(op1);
   op2 = Number(op2);
 
-  if(op2 == 111){
+  if(op2 == 112){
     throw "Error: This is an error";
   }
 
